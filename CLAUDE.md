@@ -34,7 +34,14 @@ A portal where students try small Electrical Engineering web tools.
 1. **Phase 1 (done): portal + first tool.** Homepage, light/dark theme toggle, and the Ohm's law calculator (enter any two of voltage, current, resistance; get the third plus power).
    - [x] Portal homepage with a placeholder "Tool 1 — coming soon" card that opens its page and links back.
    - [x] Placeholder replaced by the real tool: the Ohm's law calculator, opened from its homepage card with an "All tools" link back.
-2. **Phase 2 (not planned yet): more tools.** Which tools to add will be decided together before starting.
+2. **Phase 2 (planned): series/parallel resistance calculator.** Enter two or more resistor values and pick series or parallel; get the total resistance. Series: add the values. Parallel: 1 ÷ (1/R1 + 1/R2 + …).
+   - [ ] Page in `tools/series-parallel/` (html + js) with the shared header, theme toggle and "All tools" link.
+   - [ ] Inputs: start with 2 boxes, "Add resistor" / "Remove" buttons, and a series/parallel switch.
+   - [ ] Rules and messages: values above zero, empty boxes skipped, at least 2 values, plain error messages.
+   - [ ] Short plain-language "how it works" note.
+   - [ ] One new card on the homepage; update the file list above.
+   - [ ] Test at phone, tablet and desktop widths in both themes (100 Ω + 200 Ω in series = 300 Ω; two 100 Ω in parallel = 50 Ω; three 300 Ω in parallel = 100 Ω).
+   - Out of scope: unit prefixes like `4.7k`, mixed series/parallel networks, other tools.
 
 ## Rules for Claude
 - Explain technical terms in plain language.
