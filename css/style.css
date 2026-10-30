@@ -100,3 +100,10 @@ input { width: 100%; }
 }
 
 input::placeholder { color: var(--muted); opacity: 1; }
+
+form.rows { grid-template-columns: 1fr; }
+fieldset { border: 1px solid var(--border); border-radius: 0.5rem; padding: 0.5rem 1rem; margin: 0; }
+.choice { display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 1.5rem; font-weight: 400; }
+input[type="radio"] { width: auto; min-height: 0; }
+.row { display: flex; align-items: flex-end; gap: 0.75rem; margin-bottom: 1rem; }
+.row label { flex: 1; }

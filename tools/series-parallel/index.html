@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Series/Parallel Resistance Calculator</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/theme.js"></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="../../index.html">EE Tool Portal</a>
+    <button id="theme-toggle" type="button">Switch to dark theme</button>
+  </header>
+  <main>
+    <p><a href="../../index.html">&larr; All tools</a></p>
+    <h1>Series/parallel resistance calculator</h1>
+    <p>Enter two or more resistor values, choose series or parallel, and the calculator gives the total resistance.</p>
+
+    <form id="sp-form" class="rows" novalidate>
+      <fieldset>
+        <legend>Connection</legend>
+        <label class="choice"><input type="radio" name="mode" value="series" checked> Series</label>
+        <label class="choice"><input type="radio" name="mode" value="parallel"> Parallel</label>
+      </fieldset>
+
+      <div id="rows"></div>
+
+      <div class="actions">
+        <button id="add" type="button">Add resistor</button>
+        <button class="primary" type="submit">Calculate</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+    </form>
+
+    <div id="result" class="result" role="status" aria-live="polite" hidden></div>
+
+    <h2>How it works</h2>
+    <p class="muted">In a <strong>series</strong> connection the same current flows through each resistor one after another, so the resistances simply add up: <strong>R = R1 + R2 + &hellip;</strong>. In a <strong>parallel</strong> connection the current has several paths to choose from, which makes it easier to flow, so the total is smaller than the smallest resistor: <strong>1/R = 1/R1 + 1/R2 + &hellip;</strong>.</p>
+  </main>
+  <script src="series-parallel.js"></script>
+</body>
+</html>
