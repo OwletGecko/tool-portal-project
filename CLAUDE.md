@@ -46,6 +46,14 @@ A portal where students try small Electrical Engineering web tools.
    - [x] One new card on the homepage; update the file list above.
    - [x] Test at phone, tablet and desktop widths in both themes (100 Ω + 200 Ω in series = 300 Ω; two 100 Ω in parallel = 50 Ω; three 300 Ω in parallel = 100 Ω).
    - Out of scope: unit prefixes like `4.7k`, mixed series/parallel networks, other tools.
+3. **Phase 3 (planned): RC charge-time calculator.** Enter a resistance and a capacitance, each with a unit dropdown (Ω, kΩ, MΩ and pF, nF, µF, mF). Get the time constant τ = R × C and the time to charge to about 63% (1τ), 90% (2.3τ) and 99% (4.6τ), shown in µs, ms or s.
+   - [ ] Page in `tools/rc-charge-time/` (html + js) with the shared header, theme toggle and "All tools" link.
+   - [ ] Inputs: two number boxes, each with a unit dropdown beside it (under it on a phone).
+   - [ ] Rules and messages: both values required and above zero, plain error messages.
+   - [ ] Short plain-language "how it works" note (what a time constant is; charging slows as the capacitor fills).
+   - [ ] One new card `[03]` on the homepage; update the file list above.
+   - [ ] Test at phone, tablet and desktop widths in both themes (1 kΩ × 1 µF = 1 ms; 10 kΩ × 100 µF = 1 s; 1 MΩ × 1 nF = 1 ms).
+   - Out of scope: discharge timing, charge-curve graphs, typed prefixes like `4.7k`, other calculators.
 
 ## Rules for Claude
 - Explain technical terms in plain language.
