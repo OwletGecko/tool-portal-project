@@ -3,6 +3,7 @@
 ## Tech Stack
 - Plain HTML, CSS, and JavaScript only.
 - No frameworks, no build step. Files open directly in a browser.
+- Fonts (Poppins and Nunito) load from Google Fonts with a `<link>` tag in each page. That is not a build step.
 
 ## Project Structure
 ```
@@ -21,6 +22,9 @@ Update this section as files and folders are added.
 1. Every page must be responsive and work on desktop, tablet and phone.
 2. Users can toggle between a light and a dark theme. The default is the light theme.
 3. Text must stay easy to read, with good contrast, in both the light and the dark theme.
+
+## Visual Design
+"Friendly Classroom": Poppins headings, Nunito body text, rounded cards and pill buttons, amber accent (yellow in dark mode). All colors are CSS variables at the top of `css/style.css`, with one set for light and one for dark. Change colors there only.
 
 ## Feature Plan
 A portal where students try small Electrical Engineering web tools.
