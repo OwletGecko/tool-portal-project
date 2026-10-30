@@ -15,7 +15,7 @@
     }
   }
 
-  apply(saved() === "dark" ? "dark" : "light");
+  apply(saved() === "light" ? "light" : "dark");
 
   document.addEventListener("DOMContentLoaded", function () {
     apply(root.getAttribute("data-theme"));

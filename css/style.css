@@ -1,48 +1,43 @@
-/* Visual design: "Friendly Classroom" (Poppins headings, Nunito body, amber accent). */
+/* Visual design: terminal. Monospace type, green on near-black (dark is the default theme). */
 :root {
-  --bg: #ffffff;
-  --card: #fff3cc;
-  --text: #1b2b34;
-  --muted: #3f505a;
-  --border: #b58900;
-  --accent: #f5a400;
-  --accent-text: #1b2b34;
-  --link: #8a4b00;
-  --error: #b00020;
+  --bg: #0b0d0b;
+  --card: #111811;
+  --text: #3dff7a;
+  --muted: #7fcf96;
+  --border: #2a9d52;
+  --accent: #3dff7a;
+  --accent-text: #0b0d0b;
+  --error: #ff7b7b;
 }
 
-:root[data-theme="dark"] {
-  --bg: #14202a;
-  --card: #1e2f3b;
-  --text: #f4f7fa;
-  --muted: #b7c4ce;
-  --border: #6e8798;
-  --accent: #ffc857;
-  --accent-text: #14202a;
-  --link: #ffc857;
-  --error: #ff8a9b;
+:root[data-theme="light"] {
+  --bg: #f1f5ee;
+  --card: #e3ebde;
+  --text: #0b4d22;
+  --muted: #2f5d3d;
+  --border: #3b7a4f;
+  --accent: #0b4d22;
+  --accent-text: #f1f5ee;
+  --error: #b00020;
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1rem;
+  line-height: 1.65;
   background: var(--bg);
   color: var(--text);
 }
 
-h1, h2, .brand, .badge {
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
+h1 { font-size: clamp(1.6rem, 4.5vw, 2.5rem); line-height: 1.2; margin: 0 0 1rem; }
+h1::before { content: "> "; color: var(--muted); }
+h2 { font-size: 1.25rem; line-height: 1.3; }
+strong { font-weight: 700; }
 
-h1 { font-size: clamp(2rem, 5vw, 3.375rem); line-height: 1.15; margin: 0 0 1rem; }
-h2 { font-size: 1.5rem; line-height: 1.3; }
-strong { font-weight: 600; }
-
-a { color: var(--link); }
+a { color: var(--text); text-decoration: underline; text-underline-offset: 0.2em; }
 
 header, main { max-width: 70rem; margin: 0 auto; padding: 1.25rem 1.25rem; }
 
@@ -52,97 +47,70 @@ header {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
 }
 
 a.brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   color: var(--text);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   text-decoration: none;
 }
 
-.logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background: var(--accent);
-  color: var(--accent-text);
-  font-size: 1.4rem;
-}
+.logo { color: var(--muted); }
 
 main > h1, main > p { max-width: 46rem; }
 
 button, input {
   font: inherit;
   color: var(--text);
-  background: var(--card);
-  border: 2px solid var(--border);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0;
   padding: 0.6rem 1rem;
   min-height: 2.75rem;
 }
 
-input { border-radius: 0.75rem; background: var(--bg); }
+input { caret-color: var(--text); }
 
-button {
-  border-radius: 999px;
-  border-color: var(--accent);
-  font-weight: 600;
-  cursor: pointer;
-}
+button { cursor: pointer; font-weight: 700; }
+button:hover { background: var(--card); }
 
-button.primary { background: var(--accent); color: var(--accent-text); }
+button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+button.primary:hover { background: var(--accent); filter: brightness(1.1); }
 
-:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 
-.cards { display: flex; flex-wrap: wrap; gap: 1.75rem; margin-top: 1.5rem; }
+.cards { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; }
 
 .card {
   flex: 1 1 20rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.875rem;
-  padding: 2rem;
+  gap: 0.75rem;
+  padding: 1.5rem;
   background: var(--card);
-  border: 2px solid var(--accent);
-  border-radius: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
   color: var(--text);
   text-decoration: none;
 }
+.card:hover { border-color: var(--text); }
 .card h2 { margin: 0; color: var(--text); }
 .card p { margin: 0; color: var(--muted); }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 1.1rem;
-  background: var(--accent);
-  color: var(--accent-text);
-  font-weight: 700;
-  font-size: 1.75rem;
-}
+.badge { color: var(--muted); font-size: 0.9rem; }
 
-.open {
-  margin-top: 0.5rem;
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-text);
-  font-weight: 600;
-}
+.open { margin-top: 0.5rem; font-weight: 700; }
+.open::before { content: "$ "; color: var(--muted); }
 
 form, .result { max-width: 48rem; }
 form { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-label { display: grid; gap: 0.25rem; font-weight: 600; }
+label { display: grid; gap: 0.25rem; font-weight: 700; }
 input { width: 100%; }
 input::placeholder { color: var(--muted); opacity: 1; }
 .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
@@ -151,16 +119,15 @@ input::placeholder { color: var(--muted); opacity: 1; }
   margin-top: 1.5rem;
   padding: 1.25rem;
   background: var(--card);
-  border: 2px solid var(--accent);
-  border-radius: 1.25rem;
+  border: 1px solid var(--border);
 }
 .result.error { color: var(--error); border-color: var(--error); }
 .muted { color: var(--muted); }
 
 form.rows { grid-template-columns: 1fr; }
-fieldset { border: 2px solid var(--border); border-radius: 0.75rem; padding: 0.5rem 1rem; margin: 0; }
+fieldset { border: 1px solid var(--border); border-radius: 0; padding: 0.5rem 1rem; margin: 0; }
 .choice { display: inline-flex; align-items: center; gap: 0.5rem; margin-right: 1.5rem; font-weight: 400; }
-input[type="radio"] { width: auto; min-height: 0; }
+input[type="radio"] { width: auto; min-height: 0; accent-color: var(--text); }
 .row { display: flex; align-items: flex-end; gap: 0.75rem; margin-bottom: 1rem; }
 .row label { flex: 1; }
 
