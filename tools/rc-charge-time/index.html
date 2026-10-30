@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RC Charge-Time Calculator</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/theme.js"></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="../../index.html"><span class="logo" aria-hidden="true">&gt;_</span>EE Tool Portal</a>
+    <button id="theme-toggle" type="button">Switch to light theme</button>
+  </header>
+  <main>
+    <p><a href="../../index.html">&larr; All tools</a></p>
+    <h1>RC charge-time calculator</h1>
+    <p>Enter a resistance and a capacitance, and choose the unit for each. The calculator gives the time constant and how long the capacitor takes to charge.</p>
+
+    <form id="rc-form" class="rows" novalidate>
+      <div class="field">
+        <label for="resistance">Resistance</label>
+        <div class="with-unit">
+          <input id="resistance" type="number" inputmode="decimal" step="any" placeholder="value">
+          <select id="r-unit" aria-label="Resistance unit">
+            <option value="1" selected>&Omega;</option>
+            <option value="1e3">k&Omega;</option>
+            <option value="1e6">M&Omega;</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="capacitance">Capacitance</label>
+        <div class="with-unit">
+          <input id="capacitance" type="number" inputmode="decimal" step="any" placeholder="value">
+          <select id="c-unit" aria-label="Capacitance unit">
+            <option value="1e-12">pF</option>
+            <option value="1e-9">nF</option>
+            <option value="1e-6" selected>&micro;F</option>
+            <option value="1e-3">mF</option>
+          </select>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="primary" type="submit">Calculate</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+    </form>
+
+    <div id="result" class="result" role="status" aria-live="polite" hidden></div>
+
+    <h2>How it works</h2>
+    <p class="muted">A capacitor stores electric charge, like a small tank. A resistor in front of it limits how fast the tank fills. The <strong>time constant</strong> (&tau;, the Greek letter tau) tells you how fast: <strong>&tau; = R &times; C</strong>. After one &tau; the capacitor has charged to about 63% of the supply voltage. Charging slows down as it fills, because there is less "room" left, so it takes about 2.3&tau; to reach 90% and about 4.6&tau; to reach 99%.</p>
+  </main>
+  <script src="rc-charge-time.js"></script>
+</body>
+</html>

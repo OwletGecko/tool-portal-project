@@ -140,3 +140,19 @@ input[type="radio"] { width: auto; min-height: 0; accent-color: var(--text); }
 @media (min-width: 64rem) {
   header, main { padding: 1.5rem 3rem; }
 }
+
+select {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 0.6rem 1rem;
+  min-height: 2.75rem;
+}
+.field { display: grid; gap: 0.25rem; }
+.with-unit { display: flex; flex-direction: column; gap: 0.75rem; }
+@media (min-width: 40rem) {
+  .with-unit { flex-direction: row; }
+  .with-unit input { flex: 1; min-width: 0; }
+}
