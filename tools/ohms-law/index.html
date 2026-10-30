@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ohm's Law Calculator</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/theme.js"></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="../../index.html">EE Tool Portal</a>
+    <button id="theme-toggle" type="button">Switch to dark theme</button>
+  </header>
+  <main>
+    <p><a href="../../index.html">&larr; All tools</a></p>
+    <h1>Ohm's law calculator</h1>
+    <p>Fill in <strong>any two</strong> boxes and leave the third empty. The calculator works out the missing value and the power.</p>
+
+    <form id="ohms-form" novalidate>
+      <label>Voltage (V)
+        <input id="voltage" type="number" inputmode="decimal" step="any" placeholder="volts">
+      </label>
+      <label>Current (A)
+        <input id="current" type="number" inputmode="decimal" step="any" placeholder="amps">
+      </label>
+      <label>Resistance (&Omega;)
+        <input id="resistance" type="number" inputmode="decimal" step="any" placeholder="ohms">
+      </label>
+      <div class="actions">
+        <button class="primary" type="submit">Calculate</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+    </form>
+
+    <div id="result" class="result" role="status" aria-live="polite" hidden></div>
+
+    <h2>How it works</h2>
+    <p class="muted">Ohm's law says that voltage (V) equals current (I) times resistance (R): <strong>V = I &times; R</strong>. Voltage is the "push" on the electric charge, current is how much charge flows, and resistance is how much the part resists the flow. Power (P, in watts) is how much energy is used each second: <strong>P = V &times; I</strong>.</p>
+  </main>
+  <script src="ohms-law.js"></script>
+</body>
+</html>

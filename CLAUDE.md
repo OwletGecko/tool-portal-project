@@ -5,11 +5,13 @@
 - No frameworks, no build step. Files open directly in a browser.
 
 ## Project Structure
-The repository is nearly empty for now:
-
 ```
-README.md    # existing readme
-CLAUDE.md    # this file
+index.html                    # portal home page, lists the tools
+css/style.css                 # shared styles and light/dark colors
+js/theme.js                   # shared light/dark theme toggle
+tools/ohms-law/               # one folder per tool (html + js)
+README.md
+CLAUDE.md
 ```
 
 Update this section as files and folders are added.
